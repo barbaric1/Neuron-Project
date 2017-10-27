@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/main.cpp
+neuron.hpp
+/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.hpp
+iostream
+-
+
+/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.cpp
+neuron.hpp
+/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.hpp
+
+/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.hpp
+
