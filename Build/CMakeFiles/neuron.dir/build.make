@@ -35,10 +35,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src"
+CMAKE_SOURCE_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/Build"
+CMAKE_BINARY_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/neuron.dir/depend.make
@@ -50,18 +50,18 @@ include CMakeFiles/neuron.dir/progress.make
 include CMakeFiles/neuron.dir/flags.make
 
 CMakeFiles/neuron.dir/neuron.cpp.o: CMakeFiles/neuron.dir/flags.make
-CMakeFiles/neuron.dir/neuron.cpp.o: /home/INTRANET/barbaric/Desktop/myfiles/Neuron\ Program/src/neuron.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/Build/CMakeFiles" $(CMAKE_PROGRESS_1)
+CMakeFiles/neuron.dir/neuron.cpp.o: /home/INTRANET/barbaric/Desktop/myfiles/Neuron\ project/Neuron-Project/src/neuron.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/CMakeFiles" $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/neuron.dir/neuron.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/neuron.dir/neuron.cpp.o -c "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.cpp"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/neuron.dir/neuron.cpp.o -c "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/neuron.cpp"
 
 CMakeFiles/neuron.dir/neuron.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/neuron.dir/neuron.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.cpp" > CMakeFiles/neuron.dir/neuron.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/neuron.cpp" > CMakeFiles/neuron.dir/neuron.cpp.i
 
 CMakeFiles/neuron.dir/neuron.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/neuron.dir/neuron.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.cpp" -o CMakeFiles/neuron.dir/neuron.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/neuron.cpp" -o CMakeFiles/neuron.dir/neuron.cpp.s
 
 CMakeFiles/neuron.dir/neuron.cpp.o.requires:
 .PHONY : CMakeFiles/neuron.dir/neuron.cpp.o.requires
@@ -73,18 +73,18 @@ CMakeFiles/neuron.dir/neuron.cpp.o.provides: CMakeFiles/neuron.dir/neuron.cpp.o.
 CMakeFiles/neuron.dir/neuron.cpp.o.provides.build: CMakeFiles/neuron.dir/neuron.cpp.o
 
 CMakeFiles/neuron.dir/main.cpp.o: CMakeFiles/neuron.dir/flags.make
-CMakeFiles/neuron.dir/main.cpp.o: /home/INTRANET/barbaric/Desktop/myfiles/Neuron\ Program/src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/Build/CMakeFiles" $(CMAKE_PROGRESS_2)
+CMakeFiles/neuron.dir/main.cpp.o: /home/INTRANET/barbaric/Desktop/myfiles/Neuron\ project/Neuron-Project/src/main.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/CMakeFiles" $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/neuron.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/neuron.dir/main.cpp.o -c "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/main.cpp"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/neuron.dir/main.cpp.o -c "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/main.cpp"
 
 CMakeFiles/neuron.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/neuron.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/main.cpp" > CMakeFiles/neuron.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/main.cpp" > CMakeFiles/neuron.dir/main.cpp.i
 
 CMakeFiles/neuron.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/neuron.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/main.cpp" -o CMakeFiles/neuron.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/main.cpp" -o CMakeFiles/neuron.dir/main.cpp.s
 
 CMakeFiles/neuron.dir/main.cpp.o.requires:
 .PHONY : CMakeFiles/neuron.dir/main.cpp.o.requires
@@ -123,6 +123,6 @@ CMakeFiles/neuron.dir/clean:
 .PHONY : CMakeFiles/neuron.dir/clean
 
 CMakeFiles/neuron.dir/depend:
-	cd "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/Build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/Build" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/Build" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/Build/CMakeFiles/neuron.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/CMakeFiles/neuron.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/neuron.dir/depend
 

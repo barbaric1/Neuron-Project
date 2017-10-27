@@ -6,15 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/main.cpp
+/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/main.cpp
 neuron.hpp
-/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.hpp
+/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/neuron.hpp
 iostream
 -
 
-/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.cpp
+/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/neuron.cpp
 neuron.hpp
-/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.hpp
+/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/neuron.hpp
 
-/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.hpp
+/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/neuron.hpp
+vector
+-
 

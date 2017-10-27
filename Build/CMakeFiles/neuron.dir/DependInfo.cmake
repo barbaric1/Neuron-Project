@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/main.cpp" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/Build/CMakeFiles/neuron.dir/main.cpp.o"
-  "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/src/neuron.cpp" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron Program/Build/CMakeFiles/neuron.dir/neuron.cpp.o"
+  "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/main.cpp" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/CMakeFiles/neuron.dir/main.cpp.o"
+  "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/neuron.cpp" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/CMakeFiles/neuron.dir/neuron.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -15,6 +15,8 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/gtest/include"
+  "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/gtest"
   )
 set(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 set(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
