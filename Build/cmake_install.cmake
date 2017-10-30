@@ -1,4 +1,4 @@
-# Install script for directory: /home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src
+# Install script for directory: /home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

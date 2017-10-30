@@ -42,7 +42,7 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src"
+CMAKE_SOURCE_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project"
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build"

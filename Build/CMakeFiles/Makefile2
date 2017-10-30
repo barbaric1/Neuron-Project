@@ -47,7 +47,7 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src"
+CMAKE_SOURCE_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project"
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build"
@@ -91,8 +91,8 @@ clean: CMakeFiles/neuron.dir/clean
 # Target rules for target CMakeFiles/neuron_unittest.dir
 
 # All Build rule for target.
-CMakeFiles/neuron_unittest.dir/all: gtest/CMakeFiles/gtest.dir/all
 CMakeFiles/neuron_unittest.dir/all: gtest/CMakeFiles/gtest_main.dir/all
+CMakeFiles/neuron_unittest.dir/all: gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f CMakeFiles/neuron_unittest.dir/build.make CMakeFiles/neuron_unittest.dir/depend
 	$(MAKE) -f CMakeFiles/neuron_unittest.dir/build.make CMakeFiles/neuron_unittest.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/CMakeFiles"  5 6

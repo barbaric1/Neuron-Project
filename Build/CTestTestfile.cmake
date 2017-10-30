@@ -1,5 +1,5 @@
 # CMake generated Testfile for 
-# Source directory: /home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src
+# Source directory: /home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project
 # Build directory: /home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build
 # 
 # This file includes the relevant testing commands required for 

@@ -35,7 +35,7 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src"
+CMAKE_SOURCE_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project"
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build"
@@ -50,18 +50,18 @@ include gtest/CMakeFiles/gtest_main.dir/progress.make
 include gtest/CMakeFiles/gtest_main.dir/flags.make
 
 gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: gtest/CMakeFiles/gtest_main.dir/flags.make
-gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: /home/INTRANET/barbaric/Desktop/myfiles/Neuron\ project/Neuron-Project/src/gtest/src/gtest_main.cc
+gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: ../gtest/src/gtest_main.cc
 	$(CMAKE_COMMAND) -E cmake_progress_report "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/CMakeFiles" $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
-	cd "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/gtest" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/gtest/src/gtest_main.cc"
+	cd "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/gtest" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/gtest/src/gtest_main.cc"
 
 gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest_main.dir/src/gtest_main.cc.i"
-	cd "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/gtest" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/gtest/src/gtest_main.cc" > CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
+	cd "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/gtest" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/gtest/src/gtest_main.cc" > CMakeFiles/gtest_main.dir/src/gtest_main.cc.i
 
 gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest_main.dir/src/gtest_main.cc.s"
-	cd "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/gtest" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/gtest/src/gtest_main.cc" -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
+	cd "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/gtest" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/gtest/src/gtest_main.cc" -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.s
 
 gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.requires:
 .PHONY : gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.requires
@@ -98,6 +98,6 @@ gtest/CMakeFiles/gtest_main.dir/clean:
 .PHONY : gtest/CMakeFiles/gtest_main.dir/clean
 
 gtest/CMakeFiles/gtest_main.dir/depend:
-	cd "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/gtest" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/gtest" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake" --color=$(COLOR)
+	cd "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/gtest" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/gtest" "/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build/gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : gtest/CMakeFiles/gtest_main.dir/depend
 

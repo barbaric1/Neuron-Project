@@ -184,7 +184,7 @@ gtest_BINARY_DIR:STATIC=/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/N
 gtest_LIB_DEPENDS:STATIC=general;-pthread;
 
 //Value Computed by CMake
-gtest_SOURCE_DIR:STATIC=/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src/gtest
+gtest_SOURCE_DIR:STATIC=/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/gtest
 
 //Build gtest's sample programs.
 gtest_build_samples:BOOL=OFF
@@ -209,7 +209,7 @@ gtest_main_LIB_DEPENDS:STATIC=general;-pthread;general;gtest;
 neuron_BINARY_DIR:STATIC=/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/Build
 
 //Value Computed by CMake
-neuron_SOURCE_DIR:STATIC=/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src
+neuron_SOURCE_DIR:STATIC=/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project
 
 
 ########################
@@ -286,7 +286,7 @@ CMAKE_HAVE_LIBC_CREATE:INTERNAL=
 CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Start directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/src
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
