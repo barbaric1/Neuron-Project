@@ -17,6 +17,8 @@ neuron.hpp
 /home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/neuron.hpp
 vector
 -
+array
+-
 cmath
 -
 iostream
@@ -24,5 +26,7 @@ iostream
 
 /home/INTRANET/barbaric/Desktop/myfiles/Neuron project/Neuron-Project/neuron.hpp
 vector
+-
+array
 -
 

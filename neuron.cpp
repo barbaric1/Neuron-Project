@@ -1,5 +1,6 @@
 #include "neuron.hpp"
 #include <vector>
+#include <array>
 #include <cmath>
 #include <iostream>
 using namespace std;
@@ -8,38 +9,64 @@ const double STANDARD_MEMBRANE_POT = 20;
 const double REFRACTORY_TIME = 1.5;
 const double MEMBRANE_TIME_CONSTANT_TAU = 20;
 const double MEMBRANE_RESISTENCE = 20; 
+const double CONSTANT_J = 0.1; 
 
 
-void Neuron::update(unsigned int stopTime)
+Neuron::Neuron()
+: membranePotential(0), neuronTime(0), current(0), neuronIsRefractory(false), neuronWaiting(0), buffer(15,0), bufferCounter(0) {}
+
+
+Neuron::~Neuron() {}
+
+
+void Neuron::update()
 {
-	setNeuronTime(0);
-	setMembranePot(0);
-	setNeuronIsRefractory(false);
-	do
-	{ if(getMembranePot() > STANDARD_MEMBRANE_POT)
+	
+
+	if (neuronWaiting < 0)
+	{
+		setNeuronIsRefractory(false);
+	}
+		
+	else
+	{
+		
+		if(getMembranePot() > STANDARD_MEMBRANE_POT)
 		{
 			spikesTime.push_back(neuronTime);
 			setNeuronIsRefractory(true); 
 			setMembranePot(0);
+			neuronWaiting = -16;
 		}
-		
-		else if(neuronIsRefractory == true)
-		{
-	
-			neuronTime += 15;
-			setNeuronIsRefractory(false);
-		}
-		
 		else
 		{
-			setMembranePot((exp((-1)*(0.1/MEMBRANE_TIME_CONSTANT_TAU))* getMembranePot()) + (getCurrent() * MEMBRANE_RESISTENCE * (1 - exp((-1)*(0.1/MEMBRANE_TIME_CONSTANT_TAU)))));  //qua bisognera aggiungere J e inoltre potrebbe volerci l'utilizzo di getter e setter. Anche R dovra cambiare molto probabilmente
+			setMembranePot((exp((-1)*(0.1/MEMBRANE_TIME_CONSTANT_TAU))* getMembranePot()) + (getCurrent() * MEMBRANE_RESISTENCE * (1 - exp((-1)*(0.1/MEMBRANE_TIME_CONSTANT_TAU)))) + (buffer[bufferCounter] * CONSTANT_J));  //qua bisognera aggiungere J e inoltre potrebbe volerci l'utilizzo di getter e setter. Anche R dovra cambiare molto probabilmente
 			
-		}
+	}
+}
 		spikesMembranePot.push_back(getMembranePot());
-		neuronTime += 1;
+		bufferCounter += 1;
+		neuronWaiting += 1;
 		
-		
-	} while (getNeuronTime() < stopTime);
+		if (bufferCounter > 14)  //POTREI FARE UNA FUNYIONCINA//
+	{
+		bufferCounter = 0;
+	}
+}
+
+void Neuron::receive()
+{
+	if (bufferCounter > 14)
+	{
+		bufferCounter = 0;
+	}
+	
+	buffer[bufferCounter -1] += 1;
+}
+
+void Neuron::addTarget(Neuron* neuron)
+{
+	target.push_back(neuron);
 }
 
 void Neuron::setMembranePot(double m)
@@ -82,6 +109,11 @@ void Neuron::setNeuronIsRefractory(bool a)
 	neuronIsRefractory = a;
 	
 }
+
+bool Neuron::getNeuronIsRefractory()
+{
+	return neuronIsRefractory;
+}
 	
 unsigned int Neuron::getNeuronTime()
 {
@@ -93,3 +125,7 @@ void Neuron::setNeuronTime(unsigned int t)
 	neuronTime = t;
 }
 	
+vector<Neuron*> Neuron::getTarget()
+{
+	return target;
+}
