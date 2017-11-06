@@ -3,17 +3,30 @@
 #include <array>
 #include <cmath>
 #include <iostream>
+#include <random>
 using namespace std;
 
+const double VARIABLE_RATIO = 2;
+const double INHIBITORY_STRENGHT = 5;
 const double STANDARD_MEMBRANE_POT = 20;
-const double REFRACTORY_TIME = 1.5;
-const double MEMBRANE_TIME_CONSTANT_TAU = 20;
+const double REFRACTORY_TIME = 20;
+const double MEMBRANE_TIME_CONSTANT_TAU = 200;
 const double MEMBRANE_RESISTENCE = 20; 
 const double CONSTANT_J = 0.1; 
+const int NUMBER_NEURONS = 12500;
+const int NUMBER_NEURONS_CONNECTED = 0.8 * NUMBER_NEURONS;
+const int NUMBER_NEURONS_CONNECTED_EXCITATORY = 0.1 * NUMBER_NEURONS_CONNECTED;
+const int NUMBER_NEURONS_CONNECTED_INHIBITORY = 0.25 * NUMBER_NEURONS_CONNECTED_EXCITATORY;
+const double Vthr = STANDARD_MEMBRANE_POT/(CONSTANT_J * NUMBER_NEURONS_CONNECTED_EXCITATORY * MEMBRANE_TIME_CONSTANT_TAU);
+const double Vext = Vthr * VARIABLE_RATIO;
+static std::random_device rd;
+static std::mt19937 gen(rd());
+std::poisson_distribution<int> Poisson(Vext * NUMBER_NEURONS_CONNECTED_EXCITATORY);
+
 
 
 Neuron::Neuron()
-: membranePotential(0), neuronTime(0), current(0), neuronIsRefractory(false), neuronWaiting(0), buffer(15,0), bufferCounter(0) {}
+: membranePotential(0), current(0), neuronIsRefractory(false), neuronWaiting(0), buffer(15,0), bufferCounter(0), inhibitoryNeuron(false), target(0) {}
 
 
 Neuron::~Neuron() {}
@@ -33,15 +46,14 @@ void Neuron::update()
 		
 		if(getMembranePot() > STANDARD_MEMBRANE_POT)
 		{
-			spikesTime.push_back(neuronTime);
 			setNeuronIsRefractory(true); 
 			setMembranePot(0);
-			neuronWaiting = -16;
+			neuronWaiting = -REFRACTORY_TIME - 1;
 		}
 		else
 		{
-			setMembranePot((exp((-1)*(0.1/MEMBRANE_TIME_CONSTANT_TAU))* getMembranePot()) + (getCurrent() * MEMBRANE_RESISTENCE * (1 - exp((-1)*(0.1/MEMBRANE_TIME_CONSTANT_TAU)))) + (buffer[bufferCounter] * CONSTANT_J));  //qua bisognera aggiungere J e inoltre potrebbe volerci l'utilizzo di getter e setter. Anche R dovra cambiare molto probabilmente
 			
+			setMembranePot((exp((-1)*(0.1/MEMBRANE_TIME_CONSTANT_TAU))* getMembranePot()) + (getCurrent() * MEMBRANE_RESISTENCE * (1 - exp((-1)*(0.1/MEMBRANE_TIME_CONSTANT_TAU)))) + ((buffer[bufferCounter] + Poisson(gen)) * CONSTANT_J));  //qua bisognera aggiungere J e inoltre potrebbe volerci l'utilizzo di getter e setter. Anche R dovra cambiare molto probabilmente
 	}
 }
 		spikesMembranePot.push_back(getMembranePot());
@@ -56,17 +68,39 @@ void Neuron::update()
 
 void Neuron::receive()
 {
-	if (bufferCounter > 14)
-	{
-		bufferCounter = 0;
-	}
 	
-	buffer[bufferCounter -1] += 1;
+	if (bufferCounter == 0)   //potrei fare una funyione anche quui//
+	{
+		buffer[14] +=1;
+	}
+	else 
+	{
+	
+		buffer[bufferCounter -1] += 1;
+	}
+
+}
+
+void Neuron::receiveNeg()
+{
+	if (bufferCounter == 0)   //potrei fare una funyione anche quui//
+	{
+		buffer[14] -= INHIBITORY_STRENGHT;
+	}
+	else
+	{
+	
+	buffer[bufferCounter - 1] -= INHIBITORY_STRENGHT;
+	}
 }
 
 void Neuron::addTarget(Neuron* neuron)
 {
+	if (neuron ==nullptr) { cout<< "fucktarget"<< endl; }
+	
 	target.push_back(neuron);
+	
+	
 }
 
 void Neuron::setMembranePot(double m)
@@ -77,21 +111,6 @@ void Neuron::setMembranePot(double m)
 double Neuron::getMembranePot()
 {
 	return membranePotential;
-}
-
-unsigned int Neuron::getNumberOfSpikes()
-{
-	return spikesTime.size();
-}
-
-void Neuron::storeSpikesMembraneAndTime() 
-{
-	cout << "Membrane Potential ********** Time(ms)" << endl;
-	
-	for(size_t i(0); i < spikesTime.size(); i++)
-	{
-		cout << spikesMembranePot[i] << " ********** " << spikesTime[i]*REFRACTORY_TIME << endl;
-	}
 }
 	
 void Neuron::setCurrent(double c)
@@ -115,17 +134,17 @@ bool Neuron::getNeuronIsRefractory()
 	return neuronIsRefractory;
 }
 	
-unsigned int Neuron::getNeuronTime()
-{
-	return neuronTime;
-}
-	
-void Neuron::setNeuronTime(unsigned int t)
-{
-	neuronTime = t;
-}
-	
 vector<Neuron*> Neuron::getTarget()
 {
 	return target;
+}
+
+void Neuron::setInhibitoryState(bool i)
+{
+	inhibitoryNeuron = i;
+}
+
+bool Neuron::getInhibitoryState()
+{
+	return inhibitoryNeuron;
 }
