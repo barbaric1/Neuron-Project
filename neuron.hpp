@@ -2,7 +2,6 @@
 #define NEURON_H
 
 #include <vector>
-#include <array>
 
 class Neuron {
 	
@@ -11,13 +10,12 @@ class Neuron {
 	double membranePotential;
 	double current;
 	bool neuronIsRefractory;
-	std::vector<double> spikesMembranePot;
 	int neuronWaiting;
 	std::vector<int> buffer;
 	unsigned int bufferCounter;
 	bool inhibitoryNeuron;
 	std::vector<Neuron*> target;
-	
+	std::vector<unsigned int> spikesTime;
 	
 	
 	
@@ -38,6 +36,8 @@ class Neuron {
 	std::vector<Neuron*> getTarget();
 	void setInhibitoryState(bool i);
 	bool getInhibitoryState();
+	std::vector<unsigned int> getSpikesTime();
+	
 	
 	
 	

@@ -10,6 +10,7 @@ const double VARIABLE_RATIO = 2;
 const double INHIBITORY_STRENGHT = 5;
 const double STANDARD_MEMBRANE_POT = 20;
 const double REFRACTORY_TIME = 20;
+const double SIGNAL_BUFFER = 15;
 const double MEMBRANE_TIME_CONSTANT_TAU = 200;
 const double MEMBRANE_RESISTENCE = 20; 
 const double CONSTANT_J = 0.1; 
@@ -19,14 +20,14 @@ const int NUMBER_NEURONS_CONNECTED_EXCITATORY = 0.1 * NUMBER_NEURONS_CONNECTED;
 const int NUMBER_NEURONS_CONNECTED_INHIBITORY = 0.25 * NUMBER_NEURONS_CONNECTED_EXCITATORY;
 const double Vthr = STANDARD_MEMBRANE_POT/(CONSTANT_J * NUMBER_NEURONS_CONNECTED_EXCITATORY * MEMBRANE_TIME_CONSTANT_TAU);
 const double Vext = Vthr * VARIABLE_RATIO;
-static std::random_device rd;
-static std::mt19937 gen(rd());
-std::poisson_distribution<int> Poisson(Vext * NUMBER_NEURONS_CONNECTED_EXCITATORY);
+static random_device rd;
+static mt19937 gen(rd());
+poisson_distribution<int> Poisson(Vext * NUMBER_NEURONS_CONNECTED_EXCITATORY);
 
 
 
 Neuron::Neuron()
-: membranePotential(0), current(0), neuronIsRefractory(false), neuronWaiting(0), buffer(15,0), bufferCounter(0), inhibitoryNeuron(false), target(0) {}
+: membranePotential(0), current(0), neuronIsRefractory(false), neuronWaiting(0), buffer(15,0), bufferCounter(0), inhibitoryNeuron(false), target(0), spikesTime(10000) {}
 
 
 Neuron::~Neuron() {}
@@ -55,8 +56,7 @@ void Neuron::update()
 			
 			setMembranePot((exp((-1)*(0.1/MEMBRANE_TIME_CONSTANT_TAU))* getMembranePot()) + (getCurrent() * MEMBRANE_RESISTENCE * (1 - exp((-1)*(0.1/MEMBRANE_TIME_CONSTANT_TAU)))) + ((buffer[bufferCounter] + Poisson(gen)) * CONSTANT_J));  //qua bisognera aggiungere J e inoltre potrebbe volerci l'utilizzo di getter e setter. Anche R dovra cambiare molto probabilmente
 	}
-}
-		spikesMembranePot.push_back(getMembranePot());
+     }
 		bufferCounter += 1;
 		neuronWaiting += 1;
 		
@@ -71,7 +71,7 @@ void Neuron::receive()
 	
 	if (bufferCounter == 0)   //potrei fare una funyione anche quui//
 	{
-		buffer[14] +=1;
+		buffer[SIGNAL_BUFFER - 1] +=1;
 	}
 	else 
 	{
@@ -85,7 +85,7 @@ void Neuron::receiveNeg()
 {
 	if (bufferCounter == 0)   //potrei fare una funyione anche quui//
 	{
-		buffer[14] -= INHIBITORY_STRENGHT;
+		buffer[SIGNAL_BUFFER - 1] -= INHIBITORY_STRENGHT;
 	}
 	else
 	{
@@ -96,7 +96,6 @@ void Neuron::receiveNeg()
 
 void Neuron::addTarget(Neuron* neuron)
 {
-	if (neuron ==nullptr) { cout<< "fucktarget"<< endl; }
 	
 	target.push_back(neuron);
 	
@@ -147,4 +146,9 @@ void Neuron::setInhibitoryState(bool i)
 bool Neuron::getInhibitoryState()
 {
 	return inhibitoryNeuron;
+}
+
+vector<unsigned int> Neuron::getSpikesTime()
+{
+	return spikesTime;
 }

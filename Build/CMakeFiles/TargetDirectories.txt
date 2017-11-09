@@ -1,0 +1,4 @@
+/home/INTRANET/barbaric/myfiles/Neuron-Project/Build/CMakeFiles/neuron_unittest.dir
+/home/INTRANET/barbaric/myfiles/Neuron-Project/Build/CMakeFiles/neuron.dir
+/home/INTRANET/barbaric/myfiles/Neuron-Project/Build/gtest/CMakeFiles/gtest.dir
+/home/INTRANET/barbaric/myfiles/Neuron-Project/Build/gtest/CMakeFiles/gtest_main.dir

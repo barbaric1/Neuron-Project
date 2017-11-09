@@ -1,64 +1,18 @@
+#include "network.hpp"
 #include "neuron.hpp"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 int main ()
 {
 	
+	Network neuronNetwork;
 	
-	unsigned int clock(0);
-	unsigned int stopTime(100000);
-	Neuron a;
-	Neuron b;
+	neuronNetwork.createNetwork();
 	
-	a.setInhibitoryState(true);
-	b.setInhibitoryState(false);
-	vector<Neuron*> neurons(0);
-	
-	neurons.push_back(&a);
-	neurons.push_back(&b);
-	
-	a.addTarget(&b);
-	b.addTarget(&a);
-	
-	do
-	{
-		
-		for(auto neuron : neurons)
-		{
-			if (neuron ==nullptr) { cout<< "fuck"<< endl; }
-			neuron->update();
-			
-			if (neuron->getNeuronIsRefractory() == true)
-			{
-				for(auto target : neuron->getTarget())
-				{
-					if (target ==nullptr) { cout<< "fucktarget"<< endl; }
-					
-					if (neuron->getInhibitoryState() == false)
-					{
-					
-					target->receive();
-					
-					}
-					
-					else
-					{
-						target->receiveNeg();
-						
-										
-					}
-				
-					
-				}
-				
-			}
-		}
-			
-		clock += 1;
-		
-	} while(clock < stopTime);
+	neuronNetwork.runSimulation(10000);
 	
 
 
