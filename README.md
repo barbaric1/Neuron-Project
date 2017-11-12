@@ -3,6 +3,8 @@ Once that is done, you have to write the comand make
 The last comand is ./neuron
 To view different graphs you have to change the global constants "VARIABLE_RATIO" and "INHIBITORY_STRENGHT"
 
+To generate the doxy file just insert the comand make doc
+
 As a side note, as I couldn't find a way to use the phyton script for the creation of graphs that the assistents gave, I just borrowed it from my classmate Etienne under his permission, who found a much simpler way to do it in phyton. I don't think it should be a problem, as it wasn't expected from us to find a way to do it.
 
 I should now dedicate a poem to Etienne, as he helped me with this great issue:
