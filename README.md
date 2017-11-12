@@ -8,6 +8,9 @@ As a side note, as I couldn't find a way to use the phyton script for the creati
 I should now dedicate a poem to Etienne, as he helped me with this great issue:
 
 *Le rose sono rosse*
+
 *le viole sono blue*
+
 *Etienne, caro amico,*
+
 *il più bello sei tu*
