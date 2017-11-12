@@ -27,6 +27,8 @@ random
 -
 fstream
 -
+cassert
+-
 
 /home/INTRANET/barbaric/myfiles/Neuron-Project/network.hpp
 neuron.hpp
@@ -39,13 +41,13 @@ neuron.hpp
 /home/INTRANET/barbaric/myfiles/Neuron-Project/neuron.hpp
 vector
 -
-array
--
 cmath
 -
 iostream
 -
 random
+-
+cassert
 -
 
 /home/INTRANET/barbaric/myfiles/Neuron-Project/neuron.hpp

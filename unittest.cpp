@@ -4,7 +4,8 @@
 #include <cmath>
 
 
-
+/** Obsolete, as we don't use anymore the current
+ **/
 
 TEST (Neuron_test, MembraneTest) 
 {

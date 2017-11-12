@@ -12,7 +12,15 @@ int main ()
 	
 	neuronNetwork.createNetwork();
 	
-	neuronNetwork.runSimulation(10000);
+	neuronNetwork.runSimulation(12000);
+	
+	neuronNetwork.textSpikesTime();
+	
+	neuronNetwork.textSpikesTimeOfNeuron();
+	
+	std::string out = "python pscript.py &";
+	system( out.c_str());
+
 	
 
 
